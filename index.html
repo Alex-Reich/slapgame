@@ -12,26 +12,47 @@
 </head>
 
 <body>
-    <div class="container text-center">
+    <div class="container-fluid text-center">
         <div class="row">
             <div class="col">
-                <h1 class="text-center">Don't make Dad angry!</h1>
+                <h1>Don't make Dad angry!</h1>
             </div>
         </div>
-        <div class="row d-inline-flex">
-            <div class="col">
-                <img src="//placehold.it/200x200" alt="">
+        <div class="row">
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="flex-column pright">
+                        <img src="//placehold.it/200x200" alt="">
 
-            </div>
-            <div class="col">
-                <h4>Tolerance: </h4>
+                    </div>
+                    <div class="d-flex flex-column text-left">
+                        <span>
+                            <b>Name:</b>
+                            <span id="targetName">--</span>
+                        </span>
+                        <span>
+                            <b>Tolerance:</b>
+                            <span id="tolerance">--</span>
+                        </span>
+                        <span>
+                            <b>Hits:</b>
+                            <span id="hits">--</span>
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <button type="button" class="btn btn-primary">Say "I'm bored"</button>
-                <button type="button" class="btn btn-danger">Call from across the house</button>
-                <button type="button" class="btn btn-dark">Ask to eat out</button>
+                <button type="button" class="btn btn-primary" onclick="bored()">Say "I'm bored"</button>
+                <button type="button" class="btn btn-danger" onclick="call()">Call from across the house</button>
+                <button type="button" class="btn btn-dark" onclick="dinner()">Ask to eat out</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-secondary" onclick="takeNap()">Nap Time</button>
+
             </div>
         </div>
     </div>
