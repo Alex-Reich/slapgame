@@ -4,6 +4,37 @@
 .extrapad {
     padding: 1rem;
 }
-body {
+.greybg {
     background-color: grey;
+}
+.fullscreen {
+    height: 100vh;
+}.sm-rnd {
+    border-radius: 20%;
+    size: 500px, 500px;
+}
+
+.btn-w-hover{
+    position: relative;
+    display: inline-block;
+}
+.btn-w-hover .hover-elem{
+    transition: all .3s linear;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+    color: white;
+    background: black;
+    position: absolute;
+    top: -1rem;
+    backface-visibility: hidden;
+}
+.btn-w-hover:hover .hover-elem{
+    opacity: .75;
+    height: initial;
+    width: inherit;
+    z-index: 1;
+    transition-delay: width .3s linear;
 }

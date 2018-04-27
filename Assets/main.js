@@ -18,8 +18,8 @@ function item(itemName, modifier, description) {
 }
 
 var items = {
-    smartphone: new item("Smartphone", .5, "'What? Did you say something?'"),
-    oddsmell: new item("OddSmell", 2, "'Hold on, what's that smell?'"),
+    smartphone: new item("Smartphone", .5, "What? Did you say something?"),
+    oddsmell: new item("OddSmell", 2, "Hold on, what's that smell?"),
     megaphone: new item("Megaphone", 5, "Volume to 11. 'Can you hear me now? Good.'")
 }
 
@@ -86,7 +86,7 @@ function moodChange() {
     }
     if (dad.tolerance <= 0) {
         dad.name = "Rage Dad"
-        alert("Game Over!")
+        alert("That's enough! You're grounded!")
     }
     update()
 }
