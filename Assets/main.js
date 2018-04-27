@@ -1,14 +1,32 @@
 // var tolerance = 100
 // var targetName = "Dad"
 var hits = 0
-update()
 
 function Target(name, tolerance) {
-    this.name = name,
+    this.name = name
     this.tolerance = tolerance
+    this.items = []
 }
 
-var dad = new Target ("Dad", 100)
+var dad = new Target("Dad", 100)
+
+    
+function item(itemName, modifier, description) {
+        this.itemName = itemName
+        this.modifier = modifier
+        this.description = description
+    }
+    
+    var items = {
+        smartphone:new item("Smartphone", .5, "'What? Did you say something?'"),
+        oddsmell:new item("OddSmell", 2, "'Hold on, what's that smell?'"),
+        megaphone:new item("Megaphone", 5, "Volume to 11. 'Can you hear me now? Good.'")
+    }
+
+function givePhone() {
+    .push.dad.item
+}
+
 
 function bored() {
     dad.tolerance--
@@ -32,7 +50,7 @@ function dinner() {
 }
 
 function update() {
-    document.getElementById("targetName").innerText = dad.name
+    document.getElementById("targetName").innerText = dad.name;
     document.getElementById("tolerance").innerText = dad.tolerance.toString();
     document.getElementById("hits").innerText = hits.toString();
 }
@@ -59,3 +77,7 @@ function takeNap() {
     dad.name = "Dad"
     update()
 }
+
+
+
+update()
