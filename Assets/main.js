@@ -25,39 +25,44 @@ var items = {
 
 function givePhone() {
     dad.items.push(items.smartphone)
-
 }
 
 function giveSmell() {
     dad.items.push(items.oddsmell)
-
 }
 
 function giveMegaphone() {
     dad.items.push(items.megaphone)
-
 }
 
 function addMods() {
-for (var i=0, i=items.length; i++;)
+    var totalMod = 0
+for (var i=0; i<dad.items.length; i++) {
+    var item = dad.items[i]
+   totalMod += item.modifier
+}
+if (totalMod == 0) {
+    totalMod = 1
+}
+return totalMod
 }
 
 function bored() {
-    dad.tolerance--
+    dad.tolerance -= 1*addMods()
     hits++
     moodChange()
     update()
 }
 
 function call() {
-    dad.tolerance -= 5
+    dad.tolerance -= 5*addMods()
     hits++
     moodChange()
     update()
 }
 
 function dinner() {
-    dad.tolerance -= 10
+    dad.tolerance -= 10*addMods()
     hits++
     moodChange()
     update()
@@ -81,6 +86,7 @@ function moodChange() {
     }
     if (dad.tolerance <= 0) {
         dad.name = "Rage Dad"
+        alert("Game Over!")
     }
     update()
 }
@@ -89,6 +95,7 @@ function takeNap() {
     dad.tolerance = 100
     hits = 0
     dad.name = "Dad"
+    dad.items = []
     update()
 }
 

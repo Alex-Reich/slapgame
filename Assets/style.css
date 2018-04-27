@@ -4,3 +4,6 @@
 .extrapad {
     padding: 1rem;
 }
+body {
+    background-color: grey;
+}
