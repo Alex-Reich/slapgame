@@ -1,54 +1,61 @@
-var tolerance = 100
-var targetName = "Dad"
+// var tolerance = 100
+// var targetName = "Dad"
 var hits = 0
 update()
 
+function Target(name, tolerance) {
+    this.name = name,
+    this.tolerance = tolerance
+}
+
+var dad = new Target ("Dad", 100)
+
 function bored() {
-    tolerance--
+    dad.tolerance--
     hits++
     moodChange()
     update()
 }
 
 function call() {
-    tolerance -= 5
+    dad.tolerance -= 5
     hits++
     moodChange()
     update()
 }
 
 function dinner() {
-    tolerance -= 10
+    dad.tolerance -= 10
     hits++
     moodChange()
     update()
 }
 
 function update() {
-    document.getElementById("tolerance").innerText = tolerance.toString();
+    document.getElementById("targetName").innerText = dad.name
+    document.getElementById("tolerance").innerText = dad.tolerance.toString();
     document.getElementById("hits").innerText = hits.toString();
-    document.getElementById("targetName").innerText = targetName
 }
 
 function moodChange() {
-    if (tolerance <= 75) {
-        targetName = "Annoyed Dad"
+    if (dad.tolerance <= 75) {
+        dad.name = "Annoyed Dad"
     }
-    if (tolerance <= 50) {
-        targetName = "Not Mad, Just Dissapointed Dad"
+    if (dad.tolerance <= 50) {
+        dad.name = "Not Mad, Just Dissapointed Dad"
     }
-    if (tolerance <= 25) {
-        targetName = "Angry Dad"
+    if (dad.tolerance <= 25) {
+        dad.name = "Angry Dad"
     }
-    if (tolerance <= 0) {
-        targetName = "Rage Dad"
+    if (dad.tolerance <= 0) {
+        dad.name = "Rage Dad"
     }
     update()
 }
 
 function takeNap() {
-    tolerance = 100
+    dad.tolerance = 100
     hits = 0
-    targetName = "Dad"
+    dad.name = "Dad"
     update()
 }
