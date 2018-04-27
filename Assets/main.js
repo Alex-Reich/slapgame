@@ -10,23 +10,37 @@ function Target(name, tolerance) {
 
 var dad = new Target("Dad", 100)
 
-    
-function item(itemName, modifier, description) {
-        this.itemName = itemName
-        this.modifier = modifier
-        this.description = description
-    }
-    
-    var items = {
-        smartphone:new item("Smartphone", .5, "'What? Did you say something?'"),
-        oddsmell:new item("OddSmell", 2, "'Hold on, what's that smell?'"),
-        megaphone:new item("Megaphone", 5, "Volume to 11. 'Can you hear me now? Good.'")
-    }
 
-function givePhone() {
-    .push.dad.item
+function item(itemName, modifier, description) {
+    this.itemName = itemName
+    this.modifier = modifier
+    this.description = description
 }
 
+var items = {
+    smartphone: new item("Smartphone", .5, "'What? Did you say something?'"),
+    oddsmell: new item("OddSmell", 2, "'Hold on, what's that smell?'"),
+    megaphone: new item("Megaphone", 5, "Volume to 11. 'Can you hear me now? Good.'")
+}
+
+function givePhone() {
+    dad.items.push(items.smartphone)
+
+}
+
+function giveSmell() {
+    dad.items.push(items.oddsmell)
+
+}
+
+function giveMegaphone() {
+    dad.items.push(items.megaphone)
+
+}
+
+function addMods() {
+for (var i=0, i=items.length; i++;)
+}
 
 function bored() {
     dad.tolerance--
