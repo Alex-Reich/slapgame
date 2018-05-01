@@ -1,5 +1,8 @@
 // var tolerance = 100
 // var targetName = "Dad"
+
+
+//this should be on your dad object
 var hits = 0
 
 function Target(name, tolerance) {
@@ -23,6 +26,7 @@ var items = {
     megaphone: new item("Megaphone", 5, "Volume to 11. 'Can you hear me now? Good.'")
 }
 
+//how could you combine these to just 'giveItem' *see below
 function givePhone() {
     dad.items.push(items.smartphone)
 }
@@ -41,12 +45,14 @@ for (var i=0; i<dad.items.length; i++) {
     var item = dad.items[i]
    totalMod += item.modifier
 }
+//this can be simplified to just if(totalMod) because with JavaScript 0 is false
 if (totalMod == 0) {
     totalMod = 1
 }
 return totalMod
 }
 
+//how could you combine these three functions into one? Something like function annoy(type){  dad.tolerance -= dad.annoy[type] * addmods() ...}
 function bored() {
     dad.tolerance -= 1*addMods()
     hits++
@@ -74,6 +80,7 @@ function update() {
     document.getElementById("hits").innerText = hits.toString();
 }
 
+// think of how we handled cat lady and perhaps handle this on the dad object for tierd annoyances
 function moodChange() {
     if (dad.tolerance <= 75) {
         dad.name = "Annoyed Dad"
